@@ -36,7 +36,7 @@ router.get('/edit-task/:id', async (req, res) => {
 router.get('/delete-task/:id', async(req,res)=>{
     try {
         await Task.findByIdAndDelete(req.params.id);  
-        res.redirect('/home');
+        res.redirect('/');
       } catch (err) {
         console.error(err);
         res.status(500).render('error',{message :'Server Error'});
