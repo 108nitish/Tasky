@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 94vh;
+    margin : 3vh;
+    border-radius: 3vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+} 
+
+.welcome{
+    margin-bottom: 10px; 
+}
+
+.first-l{
+    color : rgb(71, 179, 73);
+}
+
+.profile-name {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.menu, .auth-options{
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul, .auth-options ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.menu ul li, .auth-options ul li {
+    margin: 9px 0;
+    width : 100%;
+    list-style: none;
+    padding : 10px 10px;   
+    background-color: #96959527;
+    border-radius: 8px;
+} 
+
+.menu ul li a, .auth-options ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;  
+} 
+
+.active {  
+    border: 3px solid rgb(71, 179, 73);  
+}
+
+.menu ul li a:hover, .auth-options ul li a:hover {
+    color: rgb(71, 179, 73);
+}
+
+.menu ul li a i, .auth-options ul li a i {
+    margin-right: 25px;
+} 
+
+.content { 
+    padding: 20px;
+    flex: 1;
+    background-color: #2a2a2a;
+    height: 94vh;
+    margin : 3vh 3vh 3vh 250px;
+    border-radius: 3vh;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) { 
+    .sidebar {  
+        width: 90px; 
+        padding :15px;
+        padding-top: 80px;
+    }  
+    .welcome {
+        display: none;
+    } 
+    .profile-name {
+        display: none;
+    }  
+    .menu ul li, .auth-options ul li { 
+        display: flex; 
+    }  
+    .menu ul li a span, .auth-options ul li a span {
+        display: none;
+    }
+    .menu ul li a i, .auth-options ul li a i {
+        font-size:30px; 
+    }
+    .content {
+        margin-left: 130px;
+        margin-right: 3vh;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .sidebar {
+        transform: translateX(-120%);
+        width: 250px;
+        position: fixed;
+        z-index: 1000;
+        margin : 0; 
+
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed; 
+        top: 3vh; 
+        background-color: rgba(42, 42, 42, 0.8);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        border-radius: 3vh;
+        z-index: 2000; 
+    }  
+    
+    .menu ul li, .auth-options ul li {
+        padding : 7px;
+    }
+
+    .menu ul li a i, .auth-options ul li a i {
+        font-size:28px;  
+    }
+
+    .content {
+        margin: 0;
+        height : 100vh;
+        border-radius: 0;
+    }
+}
+
+ 
+.sidebar.active2 {
+    transform: translateX(0); 
+    width: 69px;
+    background-color: rgba(42, 42, 42, 0.689); 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+    margin : 0;
+    padding-top: 90px;
+    border-radius: 3vh;
+    border-radius: 0;
+    animation: fade 0.5s linear, slide 0.5s linear;
+
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide {
+    from { transform: translateX(-100px); }
+    to { transform: translateX(0); }
+  }
+

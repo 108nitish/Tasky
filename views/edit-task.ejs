@@ -1,0 +1,52 @@
+<%- include('partials/head.ejs') %> 
+    <title>Edit-Task</title>
+
+    <link rel="stylesheet" href="/css/edittask.css">
+
+<%- include('partials/navbar.ejs') %>
+
+    <div class="content">
+        <div class="container">
+            <h1>Edit Your Task</h1>
+            <form action="/edit-task/<%= taskId %>" method="POST">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" maxlength="20" value = "<%= task.title%>"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" maxlength="200" required><%= task.description%></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" value="<%= task.dueDate.toISOString().substring(0, 10)%>"required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority" value = "<%= task.priority%>" required>
+                        <option value="Low" <%= task.priority === 'Low' ? 'selected' : '' %>>Low</option>
+                        <option value="Medium" <%= task.priority === 'Medium' ? 'selected' : '' %>>Medium</option>
+                        <option value="High" <%= task.priority === 'High' ? 'selected' : '' %>>High</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" value = "<%= task.status%>" required>
+                        <option value="Pending" <%= task.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+                        <option value="In-progress" <%= task.status === 'In-progress' ? 'selected' : '' %>>In-progress</option>
+                        <option value="Completed" <%= task.status === 'Completed' ? 'selected' : '' %>>Completed</option>
+                    </select>
+                </div>
+    
+                <button class = "edit-task-btn" type="submit">Edit Task</button>
+            </form> 
+        </div>
+    </div> 
+
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<%- include('partials/head.ejs') %> 
+    <title>Tasky</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+
+<%- include('partials/navbar.ejs') %>
+
+<div class="content"> 
+    <% if (user) { %>
+    <% tasks.forEach(task => { %>
+        <div class="task-card">
+            <div class="task-top">
+                <h3 class="task-title"><%= task.title %></h3>
+                <p class="task-description"><%= task.description %></p>
+                <p class="task-due-date">Due: <%= new Date(task.dueDate).toLocaleDateString() %></p>
+            </div>
+            <div class="task-bottom">
+                <p class="
+                <% if(task.status === 'Pending'){ %>
+                    task-status-r
+                <% } else if(task.status === 'In-progress'){ %>
+                    task-status-y
+                <% } else { %>
+                    task-status-g
+                <% } %>
+            "><%= task.status %></p>
+                <div class="task-actions">
+                    <a href="/edit-task/<%= task._id %>" class="edit-btn"><i class="fas fa-edit"></i></a>
+                    <a href="/delete-task/<%= task._id %>" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div> 
+    <% }) %>
+        
+    <a href="/add-task" class="task-card-add">
+        <div id="add-task-card">
+            <h1>ADD-TASK</h1>
+        </div>
+    </a>
+    <% } else { %>
+    <div class = "unlogged"> 
+        <div class = "lines">
+            <h1>Welcome!!!!</h1> 
+            <br>
+            <h4>You are not logged in. <a href="/login">Click here to log in</a>.</h4>  
+            <br>
+            <h4>If new then, <a href="/register">Click here to register</a>.</h4> 
+        </div>
+        <div>
+            <img src="./images/task.png" alt="">
+        </div>
+    </div> 
+      <% } %>
+</div> 
+
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+</head>
+<body>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+
+<div class="sidebar">  
+    <div class="profile-section">  
+        <h2 class = "welcome"><span class = "first-l">W</span>elcome,</h2>
+        
+        <h2 class="profile-name" id = "username"></h2>
+          
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="/" class = "links"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="/notes" class = "links"><i class="fas fa-clipboard"></i><span>Notepad</span></a></li>
+            <li><a href="/all-tasks" class = "links"><i class="fas fa-tasks"></i><span>All Tasks</span></a></li>
+            <li><a href="/add-task" class = "links"><i class="fas fa-plus-circle"></i><span>Add Task</span></a></li>
+            <li><a href="/week" class = "links"><i class="fa-solid fa-calendar-week"></i><span>Next Week</span></a></li>
+            <li><a href="/completed-tasks" class = "links"><i class="fas fa-check-double"></i><span>Completed Tasks</span></a></li>
+        </ul>
+    </div>
+    <div class="auth-options">
+        <ul> 
+            <% if(!user){ %>
+            <li><a href="/login"  class = "links"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li>
+            <li><a href="/register"  class = "links"><i class="fas fa-user-plus"></i><span>Register</span></a></li>  
+            <% } %>
+            <% if(user){ %>
+            <li><a href="/logout" class = "links"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+
+

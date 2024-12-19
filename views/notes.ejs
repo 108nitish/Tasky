@@ -1,0 +1,21 @@
+<%- include('partials/head.ejs') %> 
+    <title>Tasky-Notes</title>
+
+    <link rel="stylesheet" href="/css/notes.css">
+
+<%- include('partials/navbar.ejs') %>
+
+    <div class="content">
+        <div class="container">
+            <h1><span class = "first-l">N</span>otepad</h1>
+            <textarea id="noteText" placeholder="Write your note here..."></textarea>
+            <button id="saveNote">Save Note</button>
+            <h2 class="heading2">Your Notes</h2>
+            <div id="notesList"></div>
+        </div>
+    </div> 
+
+    <script src="/js/navbar.js"></script>
+    <script src="/js/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs') %> 
+    <title>Tasky</title>
+
+    <link rel="stylesheet" href="/css/alltasks.css">
+
+<%- include('partials/navbar.ejs') %>
+    
+    <div class="content"> 
+        <% tasks.forEach(task => { %>
+            <div class="task-card">
+                <div class="task-top">
+                    <h3 class="task-title"><%= task.title %></h3>
+                    <p class="task-description"><%= task.description %></p>
+                    <p class="task-due-date">Due: <%= new Date(task.dueDate).toLocaleDateString() %></p>
+                </div>
+                <div class="task-bottom">
+                    <p class="
+                    <% if(task.status === 'Pending'){ %>
+                        task-status-r
+                    <% } else if(task.status === 'In-progress'){ %>
+                        task-status-y
+                    <% } else { %>
+                        task-status-g
+                    <% } %>
+                "><%= task.status %></p>
+                    <div class="task-actions">
+                        <a href="/edit-task/<%= task._id %>" class="edit-btn"><i class="fas fa-edit"></i></a>
+                        <a href="/delete-task/<%= task._id %>" class="delete-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        <a href="/add-task" class="task-card-add">
+            <div id="add-task-card">
+                <h1>ADD-TASK</h1>
+            </div>
+        </a>
+    </div> 
+
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

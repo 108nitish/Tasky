@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %> 
+    <title>Login-Tasky</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+
+<%- include('partials/navbar.ejs') %>
+
+<div class="content"> 
+  <div class="container">
+    <h2>Welcome, login</h2>
+  <form action="/login" method="POST">
+    <div class="form-group"> 
+    <label for="email">Enter your email:-</label>
+    <input type="email" name="email" placeholder="Email" required />
+    </div>
+    <div class="form-group">
+    <label for="password">Enter your password</label>
+    <input type="password" name="password" placeholder="Password" required />
+    </div>
+    <button class = "login-btn"type="submit">Login</button>
+  </form>
+  <p>Not registered? <a href="/register">Register here</a>.</p>
+</div>
+</div> 
+
+<script src="/js/navbar.js"></script>
+</body>
+</html>
+ 

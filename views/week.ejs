@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %>
+<title>Tasky</title> 
+<link rel="stylesheet" href="/css/week.css">
+
+<%- include('partials/navbar.ejs') %>
+
+<div class="content"> 
+        <% nextWeekTasks.forEach(day => { %>
+            <div class = "day"> 
+            <h3  class = "date"><%= day.date %></h3>  
+            <hr class = "baseline"> 
+            <% if (day.tasks.length > 0) { %>
+                <ul>
+                    <% day.tasks.forEach(task => { %>
+                        <li class = "title">
+                            <%= task.title %>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p class = "title">No tasks due on this date.</p>  
+            <% } %>
+        </div>
+        <% }) %> 
+</div>
+
+<script src="/js/navbar.js"></script>
+</body>
+</html>

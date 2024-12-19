@@ -1,0 +1,64 @@
+.content{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 45%;
+    margin: auto;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+
+
+.addtask-btn {
+    background-color: #71b743;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #4a9a2a;
+}
+
+@media (max-width: 1234px) {
+    .container{
+        width : 65%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container{
+        width : 100%;
+    }
+} 
